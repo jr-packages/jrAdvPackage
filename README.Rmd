@@ -1,0 +1,30 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# Building an R Package
+[![Build Status](https://api.travis-ci.org/rcourses/nclRpackage.png?branch=master)](https://travis-ci.org/rcourses/nclRpackage)
+
+This is a teaching package created and used by [Jumping Rivers](www.jumpingrivers.com). To install the package run the 
+following commands
+
+```{r eval=FALSE}
+install.packages("drat")
+drat::addRepo("jr-packages")
+install.packages("jrPackage")
+```
+
+## TODO
+
+  * Add in section on `testthat`
+  * Add in section on `GitHub` and `travis`
