@@ -61,3 +61,84 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gi [Kt add. [K[K . 
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git add . status  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush --sset-upstream origin master[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[C[C[C[C[C[Cu [12P[C[C[C[C[C[C[C[C[C[C[C[C[C[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[C[C[C[C[Ciu [C[C[C[C[C[C[C[C[C[C[C[C[C[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cremote --v[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[Cpush -u origin master[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[Cremote add origin https://github.com/jr-packages/jrAdvPackage.git[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[Ccommit
+[1P-m "first commit for bespoke advanced / R package course"[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[3Pinit
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit --m "first commit for bespoke advanced / R package course"
+[master (root-commit) ba5c266] first commit for bespoke advanced / R package course
+ 29 files changed, 4079 insertions(+)
+ create mode 100644 .Rbuildignore
+ create mode 100644 .Rproj.user/E4EEB987/console06/B9079AD0
+ create mode 100644 .Rproj.user/E4EEB987/console06/B9079AD0.env
+ create mode 100644 .Rproj.user/E4EEB987/console06/INDEX001
+ create mode 100644 .Rproj.user/E4EEB987/sources/prop/7A400FB6
+ create mode 100644 .Rproj.user/E4EEB987/sources/prop/INDEX
+ create mode 100644 .Rproj.user/E4EEB987/sources/s-4CC45029/BC0DE2AD-contents
+ create mode 100644 .Rproj.user/E4EEB987/sources/s-4CC45029/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 DESCRIPTION
+ create mode 100644 NAMESPACE
+ create mode 100644 R/divide.R
+ create mode 100644 R/import_dummy.R
+ create mode 100644 R/jrPackage.R
+ create mode 100644 README.Rmd
+ create mode 100644 jrAdvPackage.Rproj
+ create mode 100644 man/div.Rd
+ create mode 100644 man/jrPackage-package.Rd
+ create mode 100644 vignettes/logo.png
+ create mode 100644 vignettes/practical.Rnw
+ create mode 100644 vignettes/practical1.Rmd
+ create mode 100644 vignettes/practical1.Rnw
+ create mode 100644 vignettes/practical1_contents.Rmd
+ create mode 100644 vignettes/solutions1.Rmd
+ create mode 100644 vignettes/solutions1.Rnw
+ create mode 100644 vignettes/tufte-book.cls
+ create mode 100644 vignettes/tufte-common.def
+ create mode 100644 vignettes/tufte-handout.cls
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git commit --m "first commit for bespoke advanced / R package course"[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[1Padd .
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush --sset-upstream origin master[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[C[C[C[C[C[Cu [12P[C[C[C[C[C[C[C[C[C[C[C[C[C
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': theoroe3
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://theoroe3@github.com': 
+Counting objects: 41, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/36)   Compressing objects:   5% (2/36)   Compressing objects:   8% (3/36)   Compressing objects:  11% (4/36)   Compressing objects:  13% (5/36)   Compressing objects:  16% (6/36)   Compressing objects:  19% (7/36)   Compressing objects:  22% (8/36)   Compressing objects:  25% (9/36)   Compressing objects:  27% (10/36)   Compressing objects:  30% (11/36)   Compressing objects:  33% (12/36)   Compressing objects:  36% (13/36)   Compressing objects:  38% (14/36)   Compressing objects:  41% (15/36)   Compressing objects:  44% (16/36)   Compressing objects:  47% (17/36)   Compressing objects:  50% (18/36)   Compressing objects:  52% (19/36)   Compressing objects:  55% (20/36)   Compressing objects:  58% (21/36)   Compressing objects:  61% (22/36)   Compressing objects:  63% (23/36)   Compressing objects:  66% (24/36)   Compressing objects:  69% (25/36)   Compressing objects:  72% (26/36)   Compressing objects:  75% (27/36)   Compressing objects:  77% (28/36)   Compressing objects:  80% (29/36)   Compressing objects:  83% (30/36)   Compressing objects:  86% (31/36)   Compressing objects:  88% (32/36)   Compressing objects:  91% (33/36)   Compressing objects:  94% (34/36)   Compressing objects:  97% (35/36)   Compressing objects: 100% (36/36)   Compressing objects: 100% (36/36), done.
+Writing objects:   2% (1/41)   Writing objects:   4% (2/41)   Writing objects:   7% (3/41)   Writing objects:   9% (4/41)   Writing objects:  12% (5/41)   Writing objects:  14% (6/41)   Writing objects:  17% (7/41)   Writing objects:  19% (8/41)   Writing objects:  21% (9/41)   Writing objects:  24% (10/41)   Writing objects:  26% (11/41)   Writing objects:  29% (12/41)   Writing objects:  31% (13/41)   Writing objects:  34% (14/41)   Writing objects:  36% (15/41)   Writing objects:  39% (16/41)   Writing objects:  41% (17/41)   Writing objects:  43% (18/41)   Writing objects:  46% (19/41)   Writing objects:  48% (20/41)   Writing objects:  51% (21/41)   Writing objects:  53% (22/41)   Writing objects:  56% (23/41)   Writing objects:  58% (24/41)   Writing objects:  60% (25/41)   Writing objects:  63% (26/41)   Writing objects:  65% (27/41)   Writing objects:  68% (28/41)   Writing objects:  70% (29/41)   Writing objects:  73% (30/41)   Writing objects:  75% (31/41)   Writing objects:  78% (32/41)   Writing objects:  80% (33/41)   Writing objects:  82% (34/41)   Writing objects:  87% (36/41)   Writing objects:  90% (37/41)   Writing objects:  92% (38/41)   Writing objects:  95% (39/41)   Writing objects:  97% (40/41)   Writing objects: 100% (41/41)   Writing objects: 100% (41/41), 130.62 KiB | 3.84 MiB/s, done.
+Total 41 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)   [Kremote: Resolving deltas: 100% (1/1)   [Kremote: Resolving deltas: 100% (1/1), done.[K
+To https://github.com/jr-packages/jrAdvPackage.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gi t status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/E4EEB987/sources/prop/INDEX[m
+	[31mdeleted:    .Rproj.user/E4EEB987/sources/s-4CC45029/BC0DE2AD-contents[m
+	[31mdeleted:    .Rproj.user/E4EEB987/sources/s-4CC45029/lock_file[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mdeleted:    vignettes/practical.Rnw[m
+	[31mdeleted:    vignettes/practical1.Rnw[m
+	[31mmodified:   vignettes/practical1_contents.Rmd[m
+	[31mdeleted:    vignettes/solutions1.Rnw[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m.gitignore[m
+	[31mvignettes/practical2.Rmd[m
+	[31mvignettes/practical2_content.Rmd[m
+	[31mvignettes/practical3.Rnw[m
+	[31mvignettes/solutions2.Rmd[m
+	[31mvignettes/solutions2.tex[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gi t add / [K[K.

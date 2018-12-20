@@ -1,4 +1,4 @@
-%\VignetteIndexEntry{Practical sheet}
+%\VignetteIndexEntry{practical3}
 %!Snw weave = knitr
 %\VignetteEngine{knitr::knitr}
 <<echo=FALSE>>=
@@ -10,10 +10,10 @@ results = "hide"; echo = FALSE
 library(knitr)
 options(replace.assign=FALSE,width=50)
 
-opts_chunk$set(fig.path='knitr_figure/graphics-', 
-               cache.path='knitr_cache/graphics-', 
-               fig.align='center', 
-               dev='pdf', fig.width=5, fig.height=5, 
+opts_chunk$set(fig.path='knitr_figure/graphics-',
+               cache.path='knitr_cache/graphics-',
+               fig.align='center',
+               dev='pdf', fig.width=5, fig.height=5,
                fig.show='hold', cache=FALSE, par=TRUE)
 knit_hooks$set(crop=hook_pdfcrop)
 
@@ -51,7 +51,7 @@ knit_hooks$set(par = function(before, options, envir) {
 \centering
 \includegraphics[]{logo.png}
 \end{marginfigure}
-\marginnote{Do you need statistical or computational assistance in a grant application? 
+\marginnote{Do you need statistical or computational assistance in a grant application?
 We can help!}
 \section{My first package}
 
@@ -65,7 +65,7 @@ create an RStudio project:
 \item by cloning a version control\sidenote{Git or Subversion} repository.
 \end{itemize}
 Each project has its own working directory, workspace, history, and source
-documents. 
+documents.
 
 When we create an RStudio package project, this will create a new directory that
 contains five files.
@@ -78,7 +78,7 @@ contains five files.
 \end{itemize}
 Your package directory will also contain two directories.
 \begin{itemize}
-\item \cc{man}: documentation directory: when you use the \cc{help} function in R, the help pages returned live in 
+\item \cc{man}: documentation directory: when you use the \cc{help} function in R, the help pages returned live in
 this directory.
 \item \cc{R}: R file directory: all R functions exported from your package belong in this directory.
 \end{itemize}
@@ -91,12 +91,12 @@ this directory.
     File -> New Project -> New Directory -> R package
 \end{verbatim}
 Call the package \cc{pkg} and select the directory you want to store the package
-in. Then click 
+in. Then click
 \begin{verbatim}
     Create Project
 \end{verbatim}
 Congratulations - you have just created your first package called \cc{pkg}
-\item Click 
+\item Click
 \begin{verbatim}
 Build -> Build and Reload
 \end{verbatim}
@@ -123,8 +123,8 @@ automatically generate the necessary entries. Above function definitions we add
 
 <<>>=
 #' @export
-#' @details 
-#' @aliases 
+#' @details
+#' @aliases
 @
 \noindent Notice the tags are just R comments.
 
@@ -140,11 +140,11 @@ If you don't have them installed, then install them in the usual way
 <<eval=FALSE>>=
 install.packages(c("devtools", "roxygen2"))
 @
-\item Click on 
+\item Click on
 \begin{verbatim}
     Build -> Configure build tools
 \end{verbatim}
-then select 
+then select
 \begin{verbatim}
     Generate documentation with Roxygen
 \end{verbatim}
@@ -152,8 +152,8 @@ and click OK. Now when we build our package, RStudio will automatically run
 <<eval=FALSE>>=
 library("roxygen2")
 roxygenise(".")
-@ 
-\item In the file \cc{R/hello.R} add 
+@
+\item In the file \cc{R/hello.R} add
 <<>>=
 #' @export
 @
@@ -177,8 +177,8 @@ want to export\sidenote{Export means the users loading this package, can access
 You should now be able to load your package with
 <<message=FALSE, eval=FALSE>>=
 library("pkg")
-@ 
-\noindent and call the \cc{hello} function 
+@
+\noindent and call the \cc{hello} function
 <<eval=FALSE>>=
 hello()
 @
@@ -215,12 +215,12 @@ run
 <<message=FALSE, eval=FALSE>>=
 library("pkg")
 add(1, 2)
-@ 
+@
 
 \item Create a new function called \cc{check\_numeric}
 <<>>=
 check_numeric = function(x) all(is.numeric(x))
-@ 
+@
 \noindent and save it in the \cc{basic.R} file.
 \item Now use \cc{check\_numeric} in the \cc{add} function
 <<>>=
@@ -228,7 +228,7 @@ add = function(x, y) {
   if(!check_numeric(c(x, y))) stop("Not numeric")
   x + y
 }
-@ 
+@
 
 \noindent Rebuild your package and check that the \cc{add} function still works.
 
@@ -239,20 +239,20 @@ add = function(x, y) {
 <<results="hide", eval=FALSE>>=
 library("pkg")
 check_numeric(1)
-@ 
+@
 
 \noindent but we can access any non-exported function in a package using the
 \cc{:::} operator
 
 <<eval=FALSE>>=
 pkg:::check_numeric(1)
-@ 
+@
 
 \noindent We can access\sidenote{The benefit of doing this is that we haven't
   loaded the package.} any exported function using \cc{::}
 <<eval=FALSE>>=
 pkg::add(1, 1)
-@ 
+@
 \item Now create a function \cc{subtract} and export this function. Rebuild your
   package and check that this works OK.
 \item Delete your package and re-add the functions: \cc{add},
@@ -302,10 +302,10 @@ directly edit the \cc{Rd} files.
 \item Copy the following \cc{roxygen2} descriptions to your add function
 <<eval=FALSE>>=
 #' @title A function for adding
-#' 
-#' @description A really good adding function. 
-#' Perhaps the best function ever! 
-#' 
+#'
+#' @description A really good adding function.
+#' Perhaps the best function ever!
+#'
 #' A work of pure genius.
 #' @param x a number
 #' @param y another number
@@ -324,18 +324,18 @@ add = function(x, y) {
   i.e. \cc{?add}. Run the examples via
 <<results="hide", eval=FALSE>>=
 example(add)
-@ 
+@
 \item Add a help page for the \cc{subtract} function.\sidenote{Build \& reload.}
 \item Create a function called \cc{multiply} and add an associated help page.\sidenote{Build \& reload.}
 \item Create a function called \cc{times}
 <<eval=FALSE>>=
 times = function(x, y) multiply(x, y)
-@ 
+@
 \noindent Export the \cc{times} function.\sidenote{Build \& reload.}
 \item Use the \cc{@rdname} tag above the \cc{times} function to point to the \cc{multiply} help page, i.e.
 <<>>=
 #' @rdname multiply
-@ 
+@
 \noindent Build and reload. Look at \cc{?multiply} and \cc{?times}. Now add
 \cc{@examples} to the \cc{times} function. Look at the new \cc{times} help page.
 \end{enumerate}
@@ -350,37 +350,37 @@ automatically installed.
 \subsection*{Tasks}
 
 \begin{enumerate}
-\item Install the package \cc{jrPackage}. First, we need the \cc{drat} package
+\item Install the package \cc{jrAdvPackage}. First, we need the \cc{drat} package
 <<eval=FALSE, tidy=FALSE>>=
 install.packages("drat")
-@ 
+@
 \noindent Then we add the \cc{rcourses} repo\sidenote{Run the \cc{.libPaths()}
   function to see the repository location.}
 <<eval=FALSE, tidy=FALSE>>=
 drat::addRepo("jr-packages")
-@ 
+@
 \noindent Then install as usual
 <<eval=FALSE, tidy=FALSE>>=
-install.packages("jrPackage")
-@ 
+install.packages("jrAdvPackage")
+@
 
-\item The \cc{jrPackage} contains a very useful function called \cc{div}
+\item The \cc{jrAdvPackage} contains a very useful function called \cc{div}
   that we want to use
 
 <<>>=
-library("jrPackage")
+library("jrAdvPackage")
 div(10, 2)
-@ 
+@
 
 \noindent To use the \cc{div} function within our package, we have to import it first
 
 <<>>=
-#' @importFrom jrPackage div
-@ 
+#' @importFrom jrAdvPackage div
+@
 
 \noindent and add an entry to the \cc{DESCRIPTION} file
 \begin{verbatim}
-    Imports: jrPackage
+    Imports: jrAdvPackage
 \end{verbatim}
 Create a function \cc{divide} that uses the \cc{div} function.
 \end{enumerate}
@@ -403,9 +403,9 @@ Date: 2016-11-01
 Authors@R: person(given="Colin", family="Gillespie",
     email="colin@jumpingrivers.com", role = c("aut", "cre"))
 Maintainer: Colin Gillespie <colin@jumpingrivers.com>
-Description: This is my very first package. It contains 
-  exceedingly useful functions, such as add and subtract. 
-  Make sure you add a couple of spaces to indent the 
+Description: This is my very first package. It contains
+  exceedingly useful functions, such as add and subtract.
+  Make sure you add a couple of spaces to indent the
   Description otherwise you will waste hours of your life
   trying to find the bug.
 License: GPL-2 | GPL-3
@@ -432,10 +432,10 @@ checks that are available. These include
   Check that you package passes all tests. \sidenote{CTRL + E} Fix any errors,
   warnings or notes.
 \item Add the following example to the \cc{add} function
-  
+
 <<>>=
 #' add("A", "B")
-@ 
+@
 
 \noindent Build the package. Does the package still build? Check the package.
 Does the package pass all tests?
@@ -470,17 +470,17 @@ data set. For example,\marginnote{This is entry is taken from the \cc{poweRlaw}
 #' @name moby
 #' @aliases moby_sample
 #' @title Moby Dick word count
-#' @description The frequency of occurrence of unique words 
-#' in the novel Moby Dick by Herman Melville. 
-#' 
-#' The data set moby_sample is 2000 values sampled from the 
+#' @description The frequency of occurrence of unique words
+#' in the novel Moby Dick by Herman Melville.
+#'
+#' The data set moby_sample is 2000 values sampled from the
 #' moby data set.
 #' @docType data
 #' @format A vector
-#' @source M. E. J. Newman, "Power laws, Pareto distributions 
+#' @source M. E. J. Newman, "Power laws, Pareto distributions
 #' and Zipf's law." Contemporary Physics 46, 323 (2005).
 NULL
-@ 
+@
 
 \subsection{Tasks}
 
@@ -489,7 +489,7 @@ NULL
 \item Create the following data frame
 <<>>=
 example_data = data.frame(x = runif(10), y = runif(10))
-@ 
+@
 \noindent Now save\sidenote{Use the \cc{save} function.} the data frame \cc{example\_data}
 in the \cc{data/} directory
 <<eval=FALSE>>=
@@ -538,25 +538,25 @@ documentation, then you should consider creating a vignette:
 \begin{quote}
   a \textbf{vignette} is a small illustration placed at the beginning or end of
   a book or chapter.
-  
+
   \em \url{http://dictionary.reference.com/browse/vignette}
 \end{quote}
 We can view vignettes from other packages using the \cc{vignette} function
 
 <<eval=FALSE>>=
 vignette(package="knitr")
-@ 
+@
 \noindent or to view in your web browser
 
 <<eval=FALSE>>=
 browseVignettes(package="knitr")
-@ 
+@
 \subsection{Example: markdown vignettes}
 
 Vignettes are stored in the \cc{vignettes/} directory. The simplest vignette
 uses R-markdown and is formatted by the \cc{knitr} package. To create a package
 vignette, we simply place the file in the \cc{vignettes/} directory.
-\marginnote{The output style is \cc{html\_vignette}. This is more lightweight (in terms 
+\marginnote{The output style is \cc{html\_vignette}. This is more lightweight (in terms
 of file size) than the standard \cc{html\_document}} For
 example, suppose we have a file \cc{intro.Rmd} that contains the following text:
 \marginnote{The \cc{UTF-8} line specifies the file encoding.}
@@ -573,7 +573,7 @@ vignette: >
 
 ## My first package
 
-This is my **first** package vignette. 
+This is my **first** package vignette.
 I can include mathematics, such as $x^2$.
 R code is also nicely formatted and displayed.
 
@@ -586,7 +586,7 @@ and plots
 plot(x)
 ```
 @
- 
+
 \begin{enumerate}
 \item The first few lines register \cc{knitr} as the vignette engine and provide
   an entry for the list of vignettes.
@@ -624,7 +624,7 @@ and save it in the \cc{vignettes/} directory.
 \end{verbatim}
 and then install the package from source
 <<eval=FALSE, tidy=FALSE>>=
-install.packages("pkg_1.0.tar.gz", repos=NULL, 
+install.packages("pkg_1.0.tar.gz", repos=NULL,
                  type="source")
 @
 \noindent Build and install your package. Check that you can access the
@@ -635,13 +635,13 @@ vignette.
 \subsection{Package level documentation}
 
 You package typically also has documentation associated with the package name.
-For example, 
+For example,
 <<eval=FALSE, tidy=FALSE>>=
 library("pkg")
 ?pkg
-@ 
+@
 \noindent should bring up an overview of your package. Again we use \cc{roxygen2}
-to generate the man page. Go to 
+to generate the man page. Go to
 \begin{center}
   \url{http://goo.gl/W2tJrF}
 \end{center}

@@ -116,6 +116,20 @@ Fun4 = function(x) {
 }
 ```   
 
+Change `Fun4()` so it errors if $x$ is positive
+
+```{r }
+Fun4 = function(x) {
+  rtn_value = 0
+  if(x > 0) {
+    stop("This function requires x <= 0")
+  } else if (x < 0) {
+    rtn_value = -1
+  }
+  return(rtn_value)
+}
+```   
+
 ## `for` loops.
 
 ```{r results="hide", echo=TRUE}
@@ -167,7 +181,7 @@ example can be written as `sum(1:5)`
     sum(-10:15)
     ```
 
-## More `for` loops:
+## More functions, for loops and signalling conditions:
 
 ```{r echo=TRUE}
 a = 2
@@ -219,33 +233,49 @@ argument, i.e. we can call `Fun5(1,5)`.
     }
     Fun5(5)
     ``` 
+    
+1. Change `Fun5` so that it messages the user the total after each iteration and stops the function if the total has surpassed 50.
+
+    ```{r }
+    Fun5 = function(a=1, b=10) {
+      total = 0
+      for(blob in a:b) {
+        total = total + blob
+        message("Current total is ", total)
+        if(total > 50){
+          stop("Total has surpassed limit of 50")
+        }
+      }
+      return(total)
+    }
+    Fun5(5)
+    ```
 
 
 ## Multiple t-tests
 
-In the notes, we observed that it was straight forward to
-loop through a data set set and select the maximum values:
+In the below code, I've attempted to loop through a data frame and extract the maximum values.
 
-```{r echo=TRUE}
-dd = data.frame(x = rnorm(10), y = rnorm(10), z = rnorm(10))
+```{r echo = TRUE, error = TRUE}
+dd = data.frame(w = rnorm(10), x = letters[1:10], y = rnorm(10), z = rnorm(10))
 
-max_cols = numeric(ncol(dd))
+max_cols = rep(NA, ncol(dd))
 for(i in seq_along(dd)) {
   max_cols[i] = max(dd[, i])
 }
 max_cols
 ```
 
- * Alter the above the code to calculate the `mean` instead of the maximum value
- * Now, calculate the standard deviation (via `sd`) as well as the mean. 
- You should only have a single loop!
- 
-```{r}
-means = sds = numeric(ncol(dd))
+\noindent However, there's something wrong. The second column isn't numeric and so the for loop breaks when we get to there. Of course, we could just change the iterations to c(1,3,4) to leave out the second column. But imagine we have tens of columns. Use the `try()` function to bypass the error. 
+
+```{r, eval = FALSE}
+dd = data.frame(w = rnorm(10), x = letters[1:10], y = rnorm(10), z = rnorm(10))
+
+max_cols = rep(NA, ncol(dd))
 for(i in seq_along(dd)) {
-  means[i] = mean(dd[, i])
-  sds[i] = sd(dd[, i])
+  try(max_cols[i] <- max(dd[, i]))
 }
+max_cols
 ```
 
 ## Solutions

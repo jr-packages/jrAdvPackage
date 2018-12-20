@@ -15,8 +15,9 @@ Depends:
     R (>= 3.0)
 Imports:
     devtools,
-    knitr, roxygen2, drat, poweRlaw, testthat, jrData, pryr
+    knitr, roxygen2, drat, poweRlaw, testthat, jrData, pryr, tufte
 Remotes: jr-packages/jrData
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
+Encoding: UTF-8
 Additional_repositories: http://rcourses.github.io/drat/

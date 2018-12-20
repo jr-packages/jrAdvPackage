@@ -1,0 +1,841 @@
+%\VignetteIndexEntry{practical3}
+%!Snw weave = knitr
+%\VignetteEngine{knitr::knitr}
+
+\documentclass[a4paper,justified,openany]{tufte-handout}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+
+
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Building an R package}
+\author[Jumping Rivers]{Jumping Rivers}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+\usepackage{booktabs}
+\usepackage{units}
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+\newcommand{\cc}{\texttt}
+\graphicspath{{../graphics/}}
+\setcounter{secnumdepth}{2}
+\usepackage{microtype}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+\begin{marginfigure}
+\centering
+\includegraphics[]{logo.png}
+\end{marginfigure}
+\marginnote{Do you need statistical or computational assistance in a grant application?
+We can help!}
+\section{My first package}
+
+\subsection{RStudio projects}
+
+RStudio projects make it straightforward to switch between analyses. You can
+create an RStudio project:
+\begin{itemize}
+\item in a brand new directory or
+\item in an existing directory where you already have R code and data or
+\item by cloning a version control\sidenote{Git or Subversion} repository.
+\end{itemize}
+Each project has its own working directory, workspace, history, and source
+documents.
+
+When we create an RStudio package project, this will create a new directory that
+contains five files.
+\begin{itemize}
+\item \cc{.RbuildIgnore}: this file contains a list of file names that the R
+  build process should ignore when constructing your package. For example, the \cc{.Rproj} file.
+\item \cc{DESCRIPTION}: an overview of your package.\sidenote{\url{http://goo.gl/AXSft}}
+\item \cc{*.Rproj}: an RStudio project file.
+\item \cc{NAMESPACE}: a file that contains exported/exposed package functions\sidenote{\url{http://goo.gl/I5yGf8}}.
+\end{itemize}
+Your package directory will also contain two directories.
+\begin{itemize}
+\item \cc{man}: documentation directory: when you use the \cc{help} function in R, the help pages returned live in
+this directory.
+\item \cc{R}: R file directory: all R functions exported from your package belong in this directory.
+\end{itemize}
+
+\subsection*{Tasks}
+
+\begin{enumerate}
+\item Create  a ``package'' project, via
+\begin{verbatim}
+    File -> New Project -> New Directory -> R package
+\end{verbatim}
+Call the package \cc{pkg} and select the directory you want to store the package
+in. Then click
+\begin{verbatim}
+    Create Project
+\end{verbatim}
+Congratulations - you have just created your first package called \cc{pkg}
+\item Click
+\begin{verbatim}
+Build -> Build and Reload
+\end{verbatim}
+\item Now type
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"pkg"}\hlstd{)}
+\hlkwd{hello}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Look at the \cc{NAMESPACE} file. Notice that the function \cc{hello}
+  has been exported.
+\item The \cc{hello} function has also been documented
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{help}\hlstd{(}\hlstr{"hello"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+The associated documentation file is in the \cc{man} directory.
+\end{enumerate}
+
+\subsection{roxygen2}
+
+Keeping the \cc{NAMESPACE} file and documentation up-to-date is a painful
+experience. To ameliorate the process, we use the \cc{roxygen2} package to
+automatically generate the necessary entries. Above function definitions we add
+\cc{roxygen2} tags. The tags are of the form:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @export}
+\hlcom{#' @details}
+\hlcom{#' @aliases}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Notice the tags are just R comments.
+
+\subsection*{Tasks}
+
+\begin{enumerate}
+\item Check that you have the necessary R packages installed
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"devtools"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"roxygen2"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+If you don't have them installed, then install them in the usual way
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{install.packages}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"devtools"}\hlstd{,} \hlstr{"roxygen2"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Click on
+\begin{verbatim}
+    Build -> Configure build tools
+\end{verbatim}
+then select
+\begin{verbatim}
+    Generate documentation with Roxygen
+\end{verbatim}
+and click OK. Now when we build our package, RStudio will automatically run
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"roxygen2"}\hlstd{)}
+\hlkwd{roxygenise}\hlstd{(}\hlstr{"."}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item In the file \cc{R/hello.R} add
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @export}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+just above the \cc{hello} function, i.e.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @export}
+\hlstd{hello} \hlkwb{<-} \hlkwa{function}\hlstd{() \{}
+  \hlkwd{print}\hlstd{(}\hlstr{"Hello, world!"}\hlstd{)}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+The \cc{export} tag above the \cc{hello} function indicates that we
+want to export\sidenote{Export means the users loading this package, can access
+  this function.} this particular function.
+\item Now delete the \cc{man} directory and the \cc{NAMESPACE} file\sidenote{The
+    reason for deleting these is that we will automatically generate them using
+    \cc{roxygen2} - more details below.}. Select\sidenote{The keyboard shortcut
+    for this is \mbox{\cc{Ctrl + B}}}
+\begin{verbatim}
+    Build -> Build and reload
+\end{verbatim}
+You should now be able to load your package with
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"pkg"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent and call the \cc{hello} function
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{hello}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Open the \cc{NAMESPACE} file. You should see the entry
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Generated by roxygen2: do not edit by hand}
+\hlkwd{export}\hlstd{(hello)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{enumerate}
+
+
+\subsection{Adding new functions}
+
+
+\newthought{All R} functions that we create in our package are saved in the
+\cc{R/} directory\sidenote{The files can have a \cc{.R} or \cc{.r} file
+  extension. Personally, I prefer \cc{.R}}. This directory can contain multiple
+files.
+
+\subsection*{Tasks}
+
+\begin{enumerate}
+\item Create a new file in the \cc{R/} directory called \cc{basic.R}. In this
+  file add the following code
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @export}
+\hlstd{add} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{y}\hlstd{) \{}
+  \hlkwd{return}\hlstd{(x} \hlopt{+} \hlstd{y)}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Build and reload your package\sidenote{Remember the keyboard shortcut
+  \mbox{\cc{Ctrl + B}}}. After reloading your package, the following code should
+run
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"pkg"}\hlstd{)}
+\hlkwd{add}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Create a new function called \cc{check\_numeric}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{check_numeric} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)} \hlkwd{all}\hlstd{(}\hlkwd{is.numeric}\hlstd{(x))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent and save it in the \cc{basic.R} file.
+\item Now use \cc{check\_numeric} in the \cc{add} function
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{add} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{y}\hlstd{) \{}
+  \hlkwa{if}\hlstd{(}\hlopt{!}\hlkwd{check_numeric}\hlstd{(}\hlkwd{c}\hlstd{(x, y)))} \hlkwd{stop}\hlstd{(}\hlstr{"Not numeric"}\hlstd{)}
+  \hlstd{x} \hlopt{+} \hlstd{y}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\noindent Rebuild your package and check that the \cc{add} function still works.
+
+\item Notice that we haven't exported the \cc{check\_numeric}
+  function\sidenote{Remember to export a function, the function name should be
+    in the \cc{NAMESPACE} file.}, so this will raise an error
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"pkg"}\hlstd{)}
+\hlkwd{check_numeric}\hlstd{(}\hlnum{1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\noindent but we can access any non-exported function in a package using the
+\cc{:::} operator
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{pkg}\hlopt{:::}\hlkwd{check_numeric}\hlstd{(}\hlnum{1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\noindent We can access\sidenote{The benefit of doing this is that we haven't
+  loaded the package.} any exported function using \cc{::}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{pkg}\hlopt{::}\hlkwd{add}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Now create a function \cc{subtract} and export this function. Rebuild your
+  package and check that this works OK.
+\item Delete your package and re-add the functions: \cc{add},
+  \cc{check\_numeric} and \cc{subtract}\sidenote{The purpose of this is to
+    highlight how easy it is to create packages.}.
+\end{enumerate}
+
+
+\newpage
+\section{Documentation}
+
+Using \cc{roxygen2} simplifies documentation\sidenote{The first package I wrote
+  didn't use \cc{roxygen2} and it was a very painful experience.}. The premise of
+\cc{roxygen2} is simple: describe your functions in comments next to their
+definitions and \cc{roxygen2} will process your source code and comments to
+produce \cc{Rd} files in the \cc{man/} directory. In theory, you should never
+directly edit the \cc{Rd} files.
+
+\begin{table}[b]
+  \centering
+  \begin{tabular}{@{} ll}
+    \toprule
+    Tag name & Description \\
+    \midrule
+    \cc{@title} & Short title for documentation page. \\
+    \cc{@description} & Longer description page. Skip a line for a \\
+    &\qquad new paragraph.\\
+    \cc{@param} & Function parameter description. \\
+    \cc{@inheritParams} & Use the parameter definition from another function. \\
+    \cc{@export} & Add the function to the \cc{NAMESPACE} file.\\
+    \cc{@return} & What does the function return, e.g. a data frame. \\
+    \cc{@examples} & Function examples (will be run when building). \\
+    \cc{@rdname} & Point multiple functions to the same help file,\\
+    & \qquad e.g. \cc{?substr}. \\
+    \cc{@seealso} & Pointers to other documentation pages. \\
+    \cc{@importFrom} & Import functions from other packages. \\
+    \bottomrule
+  \end{tabular}
+  \caption{Useful \cc{roxygen2} tags for documenting functions.}\label{T1.1}
+\end{table}
+
+
+
+\subsection{Tasks}
+
+\begin{enumerate}
+\item Copy the following \cc{roxygen2} descriptions to your add function
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @title A function for adding}
+\hlcom{#'}
+\hlcom{#' @description A really good adding function.}
+\hlcom{#' Perhaps the best function ever!}
+\hlcom{#'}
+\hlcom{#' A work of pure genius.}
+\hlcom{#' @param x a number}
+\hlcom{#' @param y another number}
+\hlcom{#' @return a number}
+\hlcom{#' @export}
+\hlcom{#' @examples}
+\hlcom{#' add(5, 10)}
+\hlcom{#' ## Can also use negative numbers}
+\hlcom{#' add(-5, 10)}
+\hlstd{add} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{y}\hlstd{) \{}
+  \hlkwa{if}\hlstd{(}\hlopt{!}\hlkwd{check_numeric}\hlstd{(}\hlkwd{c}\hlstd{(x, y)))} \hlkwd{stop}\hlstd{(}\hlstr{"Not numeric"}\hlstd{)}
+  \hlstd{x} \hlopt{+} \hlstd{y}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Rebuild your package and look at the help file for the \cc{add} function,
+  i.e. \cc{?add}. Run the examples via
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{example}\hlstd{(add)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Add a help page for the \cc{subtract} function.\sidenote{Build \& reload.}
+\item Create a function called \cc{multiply} and add an associated help page.\sidenote{Build \& reload.}
+\item Create a function called \cc{times}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{times} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{y}\hlstd{)} \hlkwd{multiply}\hlstd{(x, y)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Export the \cc{times} function.\sidenote{Build \& reload.}
+\item Use the \cc{@rdname} tag above the \cc{times} function to point to the \cc{multiply} help page, i.e.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @rdname multiply}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Build and reload. Look at \cc{?multiply} and \cc{?times}. Now add
+\cc{@examples} to the \cc{times} function. Look at the new \cc{times} help page.
+\end{enumerate}
+
+\subsection{Importing functions}
+
+We often want to use functions from other R packages. When we do this we need to
+be explicit, i.e. state what we want and from where. The great thing about R
+packages, is that when we install a package, the dependencies are also
+automatically installed.
+
+\subsection*{Tasks}
+
+\begin{enumerate}
+\item Install the package \cc{jrAdvPackage}. First, we need the \cc{drat} package
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{install.packages}\hlstd{(}\hlstr{"drat"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Then we add the \cc{rcourses} repo\sidenote{Run the \cc{.libPaths()}
+  function to see the repository location.}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{drat}\hlopt{::}\hlkwd{addRepo}\hlstd{(}\hlstr{"jr-packages"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Then install as usual
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{install.packages}\hlstd{(}\hlstr{"jrAdvPackage"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item The \cc{jrAdvPackage} contains a very useful function called \cc{div}
+  that we want to use
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"jrAdvPackage"}\hlstd{)}
+\hlkwd{div}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{2}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\noindent To use the \cc{div} function within our package, we have to import it first
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' @importFrom jrAdvPackage div}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\noindent and add an entry to the \cc{DESCRIPTION} file
+\begin{verbatim}
+    Imports: jrAdvPackage
+\end{verbatim}
+Create a function \cc{divide} that uses the \cc{div} function.
+\end{enumerate}
+
+
+\subsection{The \cc{DESCRIPTION} file}
+
+The \cc{DESCRIPTION} file contains high level information about your package.
+For example, the package name, a brief description, the licence, and your email
+address.
+
+Open the \cc{DESCRIPTION} file and update fields with relevant information. An
+example is given below.
+\begin{verbatim}
+Package: pkg
+Type: Package
+Title: My First package
+Version: 0.1
+Date: 2016-11-01
+Authors@R: person(given="Colin", family="Gillespie",
+    email="colin@jumpingrivers.com", role = c("aut", "cre"))
+Maintainer: Colin Gillespie <colin@jumpingrivers.com>
+Description: This is my very first package. It contains
+  exceedingly useful functions, such as add and subtract.
+  Make sure you add a couple of spaces to indent the
+  Description otherwise you will waste hours of your life
+  trying to find the bug.
+License: GPL-2 | GPL-3
+LazyData: TRUE
+\end{verbatim}
+
+\subsection{Package checks}
+
+One of great things about R packages, is that there are a number of package
+checks that are available. These include
+\begin{itemize}
+\item Checking the syntax of the \cc{DESCRIPTION} and \cc{NAMESPACE} file.
+\item Checking your examples run.
+\item Checking all exported functions are documented.
+\end{itemize}
+
+\subsection*{Tasks}
+
+\begin{enumerate}
+\item Run the standard package checks on your package, via
+\begin{verbatim}
+    Build -> Check Package
+\end{verbatim}
+  Check that you package passes all tests. \sidenote{CTRL + E} Fix any errors,
+  warnings or notes.
+\item Add the following example to the \cc{add} function
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#' add("A", "B")}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\noindent Build the package. Does the package still build? Check the package.
+Does the package pass all tests?
+\end{enumerate}
+
+\newpage
+\section{Data and demos}
+
+\subsection{Data in packages}
+
+Packages can also contain example data sets\sidenote{Full details are given at
+  \mbox{\url{http://goo.gl/Y4Srx4}}.}. Data files\sidenote{Note that R code
+  should be "self-sufficient" and not make use of extra functionality provided
+  by the package, so that the data file can also be used without having to load
+  the package.} can be one of three types as indicated by their extension.
+\begin{itemize}
+\item plain R code (\cc{.R} or \cc{.r})
+\item tables (\cc{.tab}, \cc{.txt}, or \cc{.csv})
+\item \cc{save()} images (\cc{.RData} or \cc{.rda}).\marginnote{I tend to use
+    \cc{RData files.}}
+\end{itemize}
+Data files live in the \cc{data/} directory.
+
+Each data file should also have an associated help page. The easiest way to
+generate a help page is to use \cc{roxygen2} and a dummy R function. Typically,
+I have a file called \cc{data\_help\_files.R}, which has entries for the each
+data set. For example,\marginnote{This is entry is taken from the \cc{poweRlaw}
+  package.}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## Entry in data_help_files.R}
+\hlcom{## Name is name of the data set.}
+\hlcom{#' @name moby}
+\hlcom{#' @aliases moby_sample}
+\hlcom{#' @title Moby Dick word count}
+\hlcom{#' @description The frequency of occurrence of unique words}
+\hlcom{#' in the novel Moby Dick by Herman Melville.}
+\hlcom{#'}
+\hlcom{#' The data set moby_sample is 2000 values sampled from the}
+\hlcom{#' moby data set.}
+\hlcom{#' @docType data}
+\hlcom{#' @format A vector}
+\hlcom{#' @source M. E. J. Newman, "Power laws, Pareto distributions}
+\hlcom{#' and Zipf's law." Contemporary Physics 46, 323 (2005).}
+\hlkwa{NULL}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\subsection{Tasks}
+
+\begin{enumerate}
+\item Create a \cc{data/} directory.
+\item Create the following data frame
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{example_data} \hlkwb{=} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{runif}\hlstd{(}\hlnum{10}\hlstd{),} \hlkwc{y} \hlstd{=} \hlkwd{runif}\hlstd{(}\hlnum{10}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Now save\sidenote{Use the \cc{save} function.} the data frame \cc{example\_data}
+in the \cc{data/} directory
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{save}\hlstd{(example_data,} \hlkwc{file}\hlstd{=}\hlstr{"data/example_data.RData"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\item Create a file called \cc{data\_help\_files.R} in the \cc{R/} directory and
+  document your new data set.
+\item Build and reload your package. Can you access the help page and the data
+  set?
+\item Check that your package still passes all tests\sidenote{CTRL + E}.
+\end{enumerate}
+
+
+\subsection{Demos}
+
+A demo is similar to function examples, but is typically longer and shows how to
+use multiple functions together. Demos are plain \cc{.R} files that live in the
+\cc{demo/} package directory. The demos are accessed with the \cc{demo()}
+function.
+
+In \cc{demo/} directory, there should also be an \cc{00Index} file, that lists
+the demos\sidenote{There is a planned \cc{demoTitle} tag for \cc{roxygen2}, but
+  currently this hasn't been implemented.}. For example,\sidenote{Note the white
+  space separation in the \cc{00Index}. Use at least four spaces to avoid
+  annoying error messages.}
+\begin{verbatim}
+demo1      My very first demo
+demo2      My very second demo
+\end{verbatim}
+
+\subsection{Tasks}
+
+\begin{enumerate}
+\item Create a \cc{demo/} directory.
+\item Create a file called \cc{first.R} and save it in the \cc{demo/} directory.
+  In this file show how you can use some of your newly created function.
+\item Add a \cc{00Index} file to the \cc{demo/} directory.
+\item Build and check your package.
+\end{enumerate}
+
+\newpage
+\section{Vignettes}
+
+If you want to include more extensive examples or even just further
+documentation, then you should consider creating a vignette:
+\begin{quote}
+  a \textbf{vignette} is a small illustration placed at the beginning or end of
+  a book or chapter.
+
+  \em \url{http://dictionary.reference.com/browse/vignette}
+\end{quote}
+We can view vignettes from other packages using the \cc{vignette} function
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{vignette}\hlstd{(}\hlkwc{package}\hlstd{=}\hlstr{"knitr"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent or to view in your web browser
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{browseVignettes}\hlstd{(}\hlkwc{package}\hlstd{=}\hlstr{"knitr"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\subsection{Example: markdown vignettes}
+
+Vignettes are stored in the \cc{vignettes/} directory. The simplest vignette
+uses R-markdown and is formatted by the \cc{knitr} package. To create a package
+vignette, we simply place the file in the \cc{vignettes/} directory.
+\marginnote{The output style is \cc{html\_vignette}. This is more lightweight (in terms
+of file size) than the standard \cc{html\_document}} For
+example, suppose we have a file \cc{intro.Rmd} that contains the following text:
+\marginnote{The \cc{UTF-8} line specifies the file encoding.}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+---
+title: \hlstr{"My very first vignette"}
+author: \hlstr{"Colin Gillespie and Robin Lovelace"}
+output: rmarkdown::html_vignette
+vignette: >
+  %\textbackslash{}VignetteIndexEntry\{My very first vignette\}
+  %\textbackslash{}VignetteEngine\{knitr::rmarkdown\}
+  %\textbackslash{}VignetteEncoding\{UTF-8\}
+---
+
+\hlcom{## My first package}
+
+This is my **first** package vignette.
+I can include mathematics, such as $x^2$.
+R code is also nicely formatted and displayed.
+
+```\{r\}
+x = \hlkwd{runif}(10)
+x
+```
+and plots
+```\{r\}
+\hlkwd{plot}(x)
+```
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{enumerate}
+\item The first few lines register \cc{knitr} as the vignette engine and provide
+  an entry for the list of vignettes.
+\item We have used markdown to add simple styling\sidenote{See
+    \url{http://goo.gl/y9FO5} and the RStudio markdown reference sheet for
+    further commands.}. For example \cc{**first**} becomes \textbf{first} and
+  \cc{\$x\textasciicircum 2\$} becomes $x^2$.
+\item R code is executed in the ``` regions.
+\end{enumerate}
+
+\subsection{Tasks}
+
+\begin{enumerate}
+\item Create a \cc{vignettes/} directory in your package.
+\item Create an R markdown file
+\begin{verbatim}
+    File -> New File -> R markdown
+\end{verbatim}
+and save it in the \cc{vignettes/} directory.
+\item Copy the markdown example above into your file and \textit{knit} that file.
+\item Add
+\begin{verbatim}
+    Suggests: knitr
+    VignetteBuilder: knitr
+\end{verbatim}
+  to the \cc{DESCRIPTION} file\sidenote{Notice the \cc{knitr} is only a
+    \textbf{suggested} package, since it's not essential.}. This will tell
+  your package to build vignettes using \cc{knitr}.
+\item Vignettes won't actually be built unless you are creating a source
+  bundle\sidenote{If you submit your package to CRAN, then the vignettes will
+    be built ready for distribution.}. To install a package with vignettes included, we
+  first create the source package
+\begin{verbatim}
+    Build -> Build Source Package
+\end{verbatim}
+and then install the package from source
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{install.packages}\hlstd{(}\hlstr{"pkg_1.0.tar.gz"}\hlstd{,} \hlkwc{repos}\hlstd{=}\hlkwa{NULL}\hlstd{,}
+                 \hlkwc{type}\hlstd{=}\hlstr{"source"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent Build and install your package. Check that you can access the
+vignette.
+\item Check and ensure that your package passes all tests\sidenote{CTRL + E}.
+\end{enumerate}
+
+\subsection{Package level documentation}
+
+You package typically also has documentation associated with the package name.
+For example,
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"pkg"}\hlstd{)}
+\hlopt{?}\hlstd{pkg}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\noindent should bring up an overview of your package. Again we use \cc{roxygen2}
+to generate the man page. Go to
+\begin{center}
+  \url{http://goo.gl/W2tJrF}
+\end{center}
+to view the entry for the \cc{poweRlaw} package.
+
+\subsection{Tasks}
+
+\begin{enumerate}
+\item Create a file called \cc{pkg-package.R} in the \cc{R/} directory.
+\item Using the \cc{poweRlaw} package as an example, create a man page for your
+  package\sidenote{What do you think the \cc{@aliases} tag does?}.
+\item Do one final check and ensure that your package passes all tests.
+\end{enumerate}
+
+
+
+\end{document}
