@@ -297,7 +297,7 @@ r$get_num_calls()
 ## Solutions
 
 Solutions are contained within the course package
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo = TRUE}
 library("jrAdvanced")
 vignette("solutions2", package="jrAdvPackage")
 ```
