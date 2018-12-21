@@ -354,7 +354,7 @@ automatically installed.
 <<eval=FALSE, tidy=FALSE>>=
 install.packages("drat")
 @
-\noindent Then we add the \cc{rcourses} repo\sidenote{Run the \cc{.libPaths()}
+\noindent Then we add the \cc{jr-packages} repo\sidenote{Run the \cc{.libPaths()}
   function to see the repository location.}
 <<eval=FALSE, tidy=FALSE>>=
 drat::addRepo("jr-packages")

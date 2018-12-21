@@ -20,4 +20,3 @@ Remotes: jr-packages/jrData
 VignetteBuilder: knitr
 RoxygenNote: 6.1.0
 Encoding: UTF-8
-Additional_repositories: http://rcourses.github.io/drat/
