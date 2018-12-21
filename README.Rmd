@@ -12,8 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Building an R Package
-[![Build Status](https://api.travis-ci.org/rcourses/nclRpackage.png?branch=master)](https://travis-ci.org/rcourses/nclRpackage)
+# Advanced Programming
+[![Build Status](https://api.travis-ci.org/rcourses/jrAdvPackage.png?branch=master)](https://travis-ci.org/rcourses/jrAdvPackage)
 
 This is a teaching package created and used by [Jumping Rivers](www.jumpingrivers.com). To install the package run the 
 following commands
@@ -21,7 +21,7 @@ following commands
 ```{r eval=FALSE}
 install.packages("drat")
 drat::addRepo("jr-packages")
-install.packages("jrPackage")
+install.packages("jrAdvPackage")
 ```
 
 ## TODO
