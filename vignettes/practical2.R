@@ -230,7 +230,7 @@ r$r()
 r$get_state()
 r$get_seed()
 
-## ---- eval=FALSE---------------------------
-#  library("jrAdvanced")
-#  vignette("solutions1", package="jrAdvanced")
+## ---- eval=FALSE, echo = TRUE--------------
+#  library("jrAdvPackage")
+#  vignette("solutions2", package="jrAdvPackage")
 

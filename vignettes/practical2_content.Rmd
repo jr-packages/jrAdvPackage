@@ -298,6 +298,6 @@ r$get_num_calls()
 
 Solutions are contained within the course package
 ```{r, eval=FALSE, echo = TRUE}
-library("jrAdvanced")
+library("jrAdvPackage")
 vignette("solutions2", package="jrAdvPackage")
 ```

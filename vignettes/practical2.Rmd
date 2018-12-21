@@ -11,9 +11,6 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-
-## Practical 1
-
 ```{r echo=FALSE}
 library(tufte)
 knitr::opts_chunk$set(results = "hide", echo = FALSE)

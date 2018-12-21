@@ -283,7 +283,7 @@ max_cols
 The solutions can be viewed via
 
 ```{r eval=FALSE, echo = TRUE}
-library(jrProgramming)
+library("jrAdvPackage")
 vignette("solutions1", package = "jrAdvPackage")
 ```
 
