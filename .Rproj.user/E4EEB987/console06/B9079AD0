@@ -249,3 +249,66 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git status [2Ppush[Ccommit -m "edits"[11Padd . 
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git add . [1@status[C[2Ppush[Ccommit -m "edits"
+[master 8a6fcbe] edits
+ 2 files changed, 22 insertions(+), 2 deletions(-)
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git commit -m "edits"[11Padd . [1@status[C[2Ppush[C
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': theoroe3
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://theoroe3@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/jr-packages/jrAdvPackage.git/'
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [K]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [K]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git push 
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': theoroe3
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://theoroe3@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/jr-packages/jrAdvPackage.git/'
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git push 
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': theoroe3
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://theoroe3@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/jr-packages/jrAdvPackage.git/'
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git remote -v
+origin	https://github.com/jr-packages/jrAdvPackage.git (fetch)
+origin	https://github.com/jr-packages/jrAdvPackage.git (push)
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git[K[K[Kgir[Kt remote set-url origin git@github.x [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc om:jr-packages/jrAdvPackage.git
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git push 
+Warning: Permanently added the RSA host key for IP address '140.82.118.4' to the list of known hosts.
+Counting objects: 20, done.
+Delta compression using up to 8 threads.
+Compressing objects:   5% (1/19)   Compressing objects:  10% (2/19)   Compressing objects:  15% (3/19)   Compressing objects:  21% (4/19)   Compressing objects:  26% (5/19)   Compressing objects:  31% (6/19)   Compressing objects:  36% (7/19)   Compressing objects:  42% (8/19)   Compressing objects:  47% (9/19)   Compressing objects:  52% (10/19)   Compressing objects:  57% (11/19)   Compressing objects:  63% (12/19)   Compressing objects:  68% (13/19)   Compressing objects:  73% (14/19)   Compressing objects:  78% (15/19)   Compressing objects:  84% (16/19)   Compressing objects:  89% (17/19)   Compressing objects:  94% (18/19)   Compressing objects: 100% (19/19)   Compressing objects: 100% (19/19), done.
+Writing objects:   5% (1/20)   Writing objects:  10% (2/20)   Writing objects:  15% (3/20)   Writing objects:  20% (4/20)   Writing objects:  25% (5/20)   Writing objects:  30% (6/20)   Writing objects:  35% (7/20)   Writing objects:  40% (8/20)   Writing objects:  45% (9/20)   Writing objects:  50% (10/20)   Writing objects:  55% (11/20)   Writing objects:  60% (12/20)   Writing objects:  65% (13/20)   Writing objects:  70% (14/20)   Writing objects:  75% (15/20)   Writing objects:  80% (16/20)   Writing objects:  85% (17/20)   Writing objects:  90% (18/20)   Writing objects:  95% (19/20)   Writing objects: 100% (20/20)   Writing objects: 100% (20/20), 2.24 KiB | 2.24 MiB/s, done.
+Total 20 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/10)   [Kremote: Resolving deltas:  20% (2/10)   [Kremote: Resolving deltas:  40% (4/10)   [Kremote: Resolving deltas:  60% (6/10)   [Kremote: Resolving deltas:  70% (7/10)   [Kremote: Resolving deltas:  80% (8/10)   [Kremote: Resolving deltas:  90% (9/10)   [Kremote: Resolving deltas: 100% (10/10)   [Kremote: Resolving deltas: 100% (10/10), completed with 7 local objects.[K
+To github.com:jr-packages/jrAdvPackage.git
+   782c2c1..8a6fcbe  master -> master
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rbuildignore[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/E4EEB987/sources/prop/INDEX[m
+	[31mmodified:   .gitignore[m
+	[31mmodified:   DESCRIPTION[m
+	[31mmodified:   NAMESPACE[m
+	[31mmodified:   R/import_dummy.R[m
+	[31mmodified:   vignettes/practical3.log[m
+	[31mmodified:   vignettes/practical3.pdf[m
+	[31mmodified:   vignettes/practical3.tex[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git status [2Ppush[Cremote set--url origin git@github.com:jr-packages/jrAdvPackage.git[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[C[C[C[C[C[C[C[1P-v
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Ppush commit -m ""edits"[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[4Padd .
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C

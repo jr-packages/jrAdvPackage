@@ -1,2 +1,2 @@
-#' @import knitr devtools roxygen2 testthat
+#' @import knitr devtools roxygen2
 NULL

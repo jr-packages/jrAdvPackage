@@ -15,7 +15,13 @@ Depends:
     R (>= 3.0)
 Imports:
     devtools,
-    knitr, roxygen2, drat, poweRlaw, testthat, jrData, pryr, tufte
+    knitr, 
+    roxygen2, 
+    drat, 
+    poweRlaw, 
+    jrData, 
+    pryr, 
+    tufte
 Remotes: jr-packages/jrData
 VignetteBuilder: knitr
 RoxygenNote: 6.1.0
