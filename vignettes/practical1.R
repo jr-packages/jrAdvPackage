@@ -199,5 +199,5 @@ max_cols
 
 ## ----eval=FALSE, echo = TRUE--------------------
 #  library(jrProgramming)
-#  vignette("solutions1", package = "jrProgramming")
+#  vignette("solutions1", package = "jrAdvPackage")
 
