@@ -480,3 +480,60 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ [K[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git add . 
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git commit -m ""p"r"a"c"t"c"a"[1P"[1P"i"c"a"l"3" "c"n"v"e" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr""t"e"d"[1P"[1P"[1P"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C" [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P"
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P"[1P"n"o"[1P"[1P"o"n"v" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce""r"t"e"d" "t"o" "r"m"d"
+[master d80f374] practical3 converted to rmd
+ 16 files changed, 772 insertions(+), 2725 deletions(-)
+ rewrite .Rproj.user/E4EEB987/console06/INDEX001 (86%)
+ rewrite vignettes/practical1.pdf (71%)
+ rewrite vignettes/practical2.pdf (67%)
+ create mode 100644 vignettes/practical3.Rmd
+ delete mode 100644 vignettes/practical3.Rnw
+ rewrite vignettes/practical3.aux (72%)
+ delete mode 100644 vignettes/practical3.log
+ rewrite vignettes/practical3.out (100%)
+ rewrite vignettes/practical3.pdf (96%)
+ delete mode 100644 vignettes/practical3.tex
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git push 
+Counting objects: 23, done.
+Delta compression using up to 8 threads.
+Compressing objects:   4% (1/21)   Compressing objects:   9% (2/21)   Compressing objects:  14% (3/21)   Compressing objects:  19% (4/21)   Compressing objects:  23% (5/21)   Compressing objects:  28% (6/21)   Compressing objects:  33% (7/21)   Compressing objects:  38% (8/21)   Compressing objects:  42% (9/21)   Compressing objects:  47% (10/21)   Compressing objects:  52% (11/21)   Compressing objects:  57% (12/21)   Compressing objects:  61% (13/21)   Compressing objects:  66% (14/21)   Compressing objects:  71% (15/21)   Compressing objects:  76% (16/21)   Compressing objects:  80% (17/21)   Compressing objects:  85% (18/21)   Compressing objects:  90% (19/21)   Compressing objects:  95% (20/21)   Compressing objects: 100% (21/21)   Compressing objects: 100% (21/21), done.
+Writing objects:   4% (1/23)   Writing objects:   8% (2/23)   Writing objects:  13% (3/23)   Writing objects:  17% (4/23)   Writing objects:  21% (5/23)   Writing objects:  26% (6/23)   Writing objects:  30% (7/23)   Writing objects:  34% (8/23)   Writing objects:  39% (9/23)   Writing objects:  43% (10/23)   Writing objects:  47% (11/23)   Writing objects:  52% (12/23)   Writing objects:  56% (13/23)   Writing objects:  60% (14/23)   Writing objects:  65% (15/23)   Writing objects:  69% (16/23)   Writing objects:  73% (17/23)   Writing objects:  78% (18/23)   Writing objects:  82% (19/23)   Writing objects:  86% (20/23)   Writing objects:  91% (21/23)   Writing objects:  95% (22/23)   Writing objects: 100% (23/23)   Writing objects: 100% (23/23), 277.36 KiB | 3.05 MiB/s, done.
+Total 23 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/8)   [Kremote: Resolving deltas:  12% (1/8)   [Kremote: Resolving deltas:  25% (2/8)   [Kremote: Resolving deltas:  37% (3/8)   [Kremote: Resolving deltas:  50% (4/8)   [Kremote: Resolving deltas:  62% (5/8)   [Kremote: Resolving deltas:  75% (6/8)   [Kremote: Resolving deltas:  87% (7/8)   [Kremote: Resolving deltas: 100% (8/8)   [Kremote: Resolving deltas: 100% (8/8), completed with 8 local objects.[K
+To github.com:jr-packages/jrAdvPackage.git
+   8050b6d..d80f374  master -> master
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/sources/prop/INDEX[m
+	[31mdeleted:    vignettes/practical1.pdf[m
+	[31mmodified:   vignettes/practical1_contents.Rmd[m
+	[31mdeleted:    vignettes/practical2.pdf[m
+	[31mdeleted:    vignettes/solutions2.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ [K[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gi t status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/E4EEB987/sources/prop/INDEX[m
+	[31mdeleted:    vignettes/practical1.pdf[m
+	[31mmodified:   vignettes/practical1_contents.Rmd[m
+	[31mdeleted:    vignettes/practical2.pdf[m
+	[31mdeleted:    vignettes/solutions2.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gitt status [C[C[2Ppush[C[C[Ccommit -m "practical3 converted to rmd"[C[Cadd . [K
