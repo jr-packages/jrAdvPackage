@@ -1,38 +1,5 @@
 Advanced R programming: Practical 2
 
-## Rprofile and Renviron
-
-1. Create an `.Rprofile` file. An easy way of creating the file is to use
-the R function `file.create`, so
-```{r, eval=FALSE, echo = TRUE}
-file.exists("~/.Rprofile")
-```
-\noindent Add the line
-```{r, message=FALSE, echo = TRUE}
-if(interactive()) {
-   message("Successfully loaded .Rprofile at ", date(), "\n")
-}
-```
-\noindent to the file and restart R. Does the welcome message appear?
-1. Try adding my suggestions to your `.Rprofile`, e.g.
-```{r, eval=FALSE, tidy=FALSE, echo = TRUE}
-options(prompt="R> ", digits=4,
-        show.signif.stars=FALSE)
-```
-\noindent and setting the CRAN mirror:
-```{r, eval=FALSE, tidy=FALSE, echo = TRUE}
-r = getOption("repos")
-r["CRAN"] = "http://cran.rstudio.com/"
-options(repos = r)
-rm(r)
-```
-1. Try adding a few functions to your `.Rprofile`. See chapter 2 in the notes for help. Use the hidden environment trick. Also take a look at this stackoverflow question
-\begin{center}
-\url{http://goo.gl/TLFLQR}
-\end{center}
-for ideas.
-1. Create an `.Renviron` file and add the path to your packages.
-
 ## Argument matching
 
 R allows a variety of ways to match function arguments. For example, by position, by complete name, or by partial name. We didn't cover argument matching in the lecture, so let's try and figure out the rules from the examples below. First we'll create a little function to help
@@ -241,58 +208,6 @@ geometric = function(prob) {
      return(list(r=r, d=d))
 }
 ```
-
-## Mutable states
-
-```{r, randu, results="hide", echo = FALSE}
-##Solutions
-randu = function(seed) {
-  state = seed
-  calls = 0 #Store the number of calls
-  r = function() {
-    state <<- (65539*state) %% 2^31
-    ## Update the variable outside of this enviroment
-    calls <<- calls + 1
-    state/2^31
-  }
-  set_state = function(initial) state <<- initial
-  get_state = function() state
-  get_seed = function() seed
-  get_num_calls = function() calls
-  list(r=r, set_state=set_state, get_state=get_state,
-       get_seed = get_seed, get_num_calls=get_num_calls)
-}
-r = randu(10)
-r$r()
-r$get_state()
-r$get_seed()
-```
-
-In chapter 2, we created a random number generator where the `state`, was stored between function calls.
-
-- Reproduce the `randu` generator from the notes and make sure that it works as advertised.
-- When we initialise the random number generator, the very first state is called the `seed`. Store this variable and create a new function called `get_seed` that will return the initial seed, i.e.
-```{r, echo = TRUE}
-r = randu(10)
-r$r()
-r$get_state()
-r$get_seed()
-```
-- Create a variable that stores the number of times the generator has been called. You should be able to access this variable with the function `get_num_calls()`
-```{r, echo = TRUE}
-r = randu(10)
-r$get_num_calls()
-r$r()
-r$r()
-r$get_num_calls()
-```
-
-
-```{r, randu}
-```
-
-
-
 
 ## Solutions
 

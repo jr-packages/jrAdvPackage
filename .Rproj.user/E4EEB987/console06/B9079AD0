@@ -382,3 +382,101 @@ To github.com:jr-packages/jrAdvPackage.git
 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@add .[Ccommit -m ""minor change"[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[5Ppush
 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kgit push commit -m ""minor change"[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[4Padd .
 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Ppush[C[1@add .[C
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git add . [1Ppush[Ccommit -m ""minor change"
+[master 8050b6d] minor change
+ 9 files changed, 28 insertions(+), 11 deletions(-)
+ rewrite vignettes/practical1.pdf (72%)
+ rewrite vignettes/practical2.pdf (84%)
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ git commit -m ""minor change"[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ [C[C[C[C[4Padd .
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Ppush[C
+Counting objects: 15, done.
+Delta compression using up to 8 threads.
+Compressing objects:   6% (1/15)   Compressing objects:  13% (2/15)   Compressing objects:  20% (3/15)   Compressing objects:  26% (4/15)   Compressing objects:  33% (5/15)   Compressing objects:  40% (6/15)   Compressing objects:  46% (7/15)   Compressing objects:  53% (8/15)   Compressing objects:  60% (9/15)   Compressing objects:  66% (10/15)   Compressing objects:  73% (11/15)   Compressing objects:  80% (12/15)   Compressing objects:  86% (13/15)   Compressing objects:  93% (14/15)   Compressing objects: 100% (15/15)   Compressing objects: 100% (15/15), done.
+Writing objects:   6% (1/15)   Writing objects:  13% (2/15)   Writing objects:  20% (3/15)   Writing objects:  26% (4/15)   Writing objects:  33% (5/15)   Writing objects:  40% (6/15)   Writing objects:  46% (7/15)   Writing objects:  53% (8/15)   Writing objects:  60% (9/15)   Writing objects:  66% (10/15)   Writing objects:  73% (11/15)   Writing objects:  80% (12/15)   Writing objects:  86% (13/15)   Writing objects:  93% (14/15)   Writing objects: 100% (15/15)   Writing objects: 100% (15/15), 79.17 KiB | 6.60 MiB/s, done.
+Total 15 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/9)   [Kremote: Resolving deltas:  11% (1/9)   [Kremote: Resolving deltas:  22% (2/9)   [Kremote: Resolving deltas:  33% (3/9)   [Kremote: Resolving deltas:  44% (4/9)   [Kremote: Resolving deltas:  55% (5/9)   [Kremote: Resolving deltas:  66% (6/9)   [Kremote: Resolving deltas:  77% (7/9)   [Kremote: Resolving deltas:  88% (8/9)   [Kremote: Resolving deltas: 100% (9/9)   [Kremote: Resolving deltas: 100% (9/9), completed with 9 local objects.[K
+To github.com:jr-packages/jrAdvPackage.git
+   dc88c68..8050b6d  master -> master
+[K]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackaage[00m$ git stats[Kus 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0.env[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   vignettes/practical1.pdf[m
+	[31mmodified:   vignettes/practical2.pdf[m
+	[31mmodified:   vignettes/practical2_content.Rmd[m
+	[31mmodified:   vignettes/practical3.Rnw[m
+	[31mdeleted:    vignettes/practical3.log[m
+	[31mmodified:   vignettes/practical3.tex[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/[KjjrAdvPackage[00m$ [K[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ [K[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0.env[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/E4EEB987/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   vignettes/practical1.pdf[m
+	[31mmodified:   vignettes/practical2.pdf[m
+	[31mmodified:   vignettes/practical2_content.Rmd[m
+	[31mmodified:   vignettes/practical3.R[m
+	[31mdeleted:    vignettes/practical3.Rnw[m
+	[31mmodified:   vignettes/practical3.aux[m
+	[31mdeleted:    vignettes/practical3.log[m
+	[31mmodified:   vignettes/practical3.out[m
+	[31mdeleted:    vignettes/practical3.pdf[m
+	[31mdeleted:    vignettes/practical3.tex[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mvignettes/knitr_figure/[m
+	[31mvignettes/practical3.Rmd[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ [K[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git sr[Ktats[Kus 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0.env[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   .Rproj.user/E4EEB987/sources/prop/INDEX[m
+	[31mmodified:   .Rproj.user/shared/notebooks/paths[m
+	[31mmodified:   vignettes/practical1.pdf[m
+	[31mmodified:   vignettes/practical2.pdf[m
+	[31mmodified:   vignettes/practical2_content.Rmd[m
+	[31mmodified:   vignettes/practical3.R[m
+	[31mdeleted:    vignettes/practical3.Rnw[m
+	[31mmodified:   vignettes/practical3.aux[m
+	[31mdeleted:    vignettes/practical3.log[m
+	[31mmodified:   vignettes/practical3.out[m
+	[31mmodified:   vignettes/practical3.pdf[m
+	[31mdeleted:    vignettes/practical3.tex[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mvignettes/knitr_figure/[m
+	[31mvignettes/practical3.Rmd[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ [K[A]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jjrAdvPackage[00m$ git add . 

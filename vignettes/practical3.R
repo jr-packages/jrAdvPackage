@@ -1,5 +1,6 @@
-## ----echo=FALSE----------------------------------------------------------
-results = "hide"; echo = FALSE
+## ----echo=FALSE----------------------------
+library(tufte)
+#knitr::opts_chunk$set(results = "hide", echo = FALSE)
 
 ## ----setup, include=FALSE, cache=FALSE----------
 library(knitr)
@@ -17,6 +18,9 @@ knit_hooks$set(par = function(before, options, envir) {
         par(mar=c(3,3,2,1),cex.lab=.95,cex.axis=.9,
             mgp=c(2,.7,0),tcl=-.01, las=1)
 }}, crop=hook_pdfcrop)
+
+## ---- fig.margin = TRUE, out.width="\\textwidth", echo = FALSE----
+knitr::include_graphics("logo.png")
 
 ## ----eval=FALSE---------------------------------
 #  library("pkg")
@@ -183,14 +187,13 @@ example_data = data.frame(x = runif(10), y = runif(10))
 #  I can include mathematics, such as $x^2$.
 #  R code is also nicely formatted and displayed.
 #  
-#  ```{r}
-#  x = runif(10)
-#  x
-#  ```
-#  and plots
-#  ```{r}
-#  plot(x)
-#  ```
+
+## -----------------------------------------------
+x = runif(10)
+x
+
+## -----------------------------------------------
+plot(x)
 
 ## ----eval=FALSE, tidy=FALSE---------------------
 #  install.packages("pkg_1.0.tar.gz", repos=NULL,
