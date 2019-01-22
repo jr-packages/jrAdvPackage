@@ -2,24 +2,6 @@
 library(tufte)
 knitr::opts_chunk$set(results = "hide", echo = TRUE)
 
-## ---- eval=FALSE, echo = TRUE--------------
-#  file.exists("~/.Rprofile")
-
-## ---- message=FALSE, echo = TRUE-----------
-if(interactive()) {
-   message("Successfully loaded .Rprofile at ", date(), "\n")
-}
-
-## ---- eval=FALSE, tidy=FALSE, echo = TRUE----
-#  options(prompt="R> ", digits=4,
-#          show.signif.stars=FALSE)
-
-## ---- eval=FALSE, tidy=FALSE, echo = TRUE----
-#  r = getOption("repos")
-#  r["CRAN"] = "http://cran.rstudio.com/"
-#  options(repos = r)
-#  rm(r)
-
 ## ---- tidy=FALSE, echo = TRUE--------------
 arg_explore = function(arg1, rg2, rg3)
     paste("a1, a2, a3 = ", arg1, rg2, rg3)
@@ -171,66 +153,33 @@ geometric = function(prob) {
      return(list(r=r, d=d))
 }
 
-## ---- randu, results="hide", echo = FALSE----
-##Solutions
-randu = function(seed) {
-  state = seed
-  calls = 0 #Store the number of calls
-  r = function() {
-    state <<- (65539*state) %% 2^31
-    ## Update the variable outside of this enviroment
-    calls <<- calls + 1
-    state/2^31
-  }
-  set_state = function(initial) state <<- initial
-  get_state = function() state
-  get_seed = function() seed
-  get_num_calls = function() calls
-  list(r=r, set_state=set_state, get_state=get_state,
-       get_seed = get_seed, get_num_calls=get_num_calls)
-}
-r = randu(10)
-r$r()
-r$get_state()
-r$get_seed()
+## ----echo = TRUE, error = TRUE, eval = FALSE----
+#  dd = data.frame(w = rnorm(10),
+#                  x = letters[1:10],
+#                  y = rnorm(10),
+#                  z = rnorm(10)
+#  )
+#  
+#  max_cols = rep(NA, ncol(dd))
+#  for (i in seq_along(dd)) {
+#    max_cols[i] = max(dd[, i])
+#  }
+#  max_cols
 
-## ---- echo = TRUE--------------------------
-r = randu(10)
-r$r()
-r$get_state()
-r$get_seed()
+## ---- eval = FALSE, error = FALSE----------
+#  dd = data.frame(w = rnorm(10),
+#                  x = letters[1:10],
+#                  y = rnorm(10),
+#                  z = rnorm(10)
+#  )
+#  
+#  max_cols = rep(NA, ncol(dd))
+#  for (i in seq_along(dd)) {
+#    try(max_cols[i] <- max(dd[, i]))
+#  }
+#  max_cols
 
-## ---- echo = TRUE--------------------------
-r = randu(10)
-r$get_num_calls()
-r$r()
-r$r()
-r$get_num_calls()
-
-## ---- randu--------------------------------
-##Solutions
-randu = function(seed) {
-  state = seed
-  calls = 0 #Store the number of calls
-  r = function() {
-    state <<- (65539*state) %% 2^31
-    ## Update the variable outside of this enviroment
-    calls <<- calls + 1
-    state/2^31
-  }
-  set_state = function(initial) state <<- initial
-  get_state = function() state
-  get_seed = function() seed
-  get_num_calls = function() calls
-  list(r=r, set_state=set_state, get_state=get_state,
-       get_seed = get_seed, get_num_calls=get_num_calls)
-}
-r = randu(10)
-r$r()
-r$get_state()
-r$get_seed()
-
-## ---- eval=FALSE---------------------------
-#  library("jrAdvanced")
-#  vignette("solutions1", package="jrAdvanced")
+## ---- eval=FALSE, echo = TRUE--------------
+#  library("jrAdvPackage")
+#  vignette("solutions2", package="jrAdvPackage")
 

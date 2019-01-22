@@ -537,3 +537,68 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gitt status [C[C[2Ppush[C[C[Ccommit -m "practical3 converted to rmd"[C[Cadd . [K
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gitt add . [C[C[1@status[C[C[C[2Ppush[C[C[Ccommit -m "practical3 converted to rmd"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"h"e"[1P"[1P"[K[C"m"i"n"o"r" "h"[1P"c"h"a"n"g"e"s"
+[master ac7423e] minor changes
+ 7 files changed, 119 insertions(+), 53 deletions(-)
+ delete mode 100644 vignettes/practical1.pdf
+ delete mode 100644 vignettes/practical2.pdf
+ delete mode 100644 vignettes/solutions2.pdf
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvPackage[00m$ gi t push ][K
+Counting objects: 12, done.
+Delta compression using up to 8 threads.
+Compressing objects:   9% (1/11)   Compressing objects:  18% (2/11)   Compressing objects:  27% (3/11)   Compressing objects:  36% (4/11)   Compressing objects:  45% (5/11)   Compressing objects:  54% (6/11)   Compressing objects:  63% (7/11)   Compressing objects:  72% (8/11)   Compressing objects:  81% (9/11)   Compressing objects:  90% (10/11)   Compressing objects: 100% (11/11)   Compressing objects: 100% (11/11), done.
+Writing objects:   8% (1/12)   Writing objects:  16% (2/12)   Writing objects:  25% (3/12)   Writing objects:  33% (4/12)   Writing objects:  41% (5/12)   Writing objects:  50% (6/12)   Writing objects:  58% (7/12)   Writing objects:  66% (8/12)   Writing objects:  75% (9/12)   Writing objects:  83% (10/12)   Writing objects:  91% (11/12)   Writing objects: 100% (12/12)   Writing objects: 100% (12/12), 2.05 KiB | 299.00 KiB/s, done.
+Total 12 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/6)   [Kremote: Resolving deltas:  16% (1/6)   [Kremote: Resolving deltas:  33% (2/6)   [Kremote: Resolving deltas:  50% (3/6)   [Kremote: Resolving deltas:  66% (4/6)   [Kremote: Resolving deltas:  83% (5/6)   [Kremote: Resolving deltas: 100% (6/6)   [Kremote: Resolving deltas: 100% (6/6), completed with 6 local objects.[K
+To github.com:jr-packages/jrAdvPackage.git
+   d80f374..ac7423e  master -> master
+git status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   vignettes/practical1.R[m
+	[31mmodified:   vignettes/practical1_contents.Rmd[m
+	[31mmodified:   vignettes/practical2.R[m
+	[31mmodified:   vignettes/practical2_content.Rmd[m
+	[31mmodified:   vignettes/solutions2.R[m
+	[31mmodified:   vignettes/solutions2.Rmd[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mvignettes/practical1.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvvPackage[00m$ git status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/B9079AD0.env[m
+	[31mmodified:   .Rproj.user/E4EEB987/console06/INDEX001[m
+	[31mmodified:   vignettes/practical1.R[m
+	[31mmodified:   vignettes/practical1_contents.Rmd[m
+	[31mmodified:   vignettes/practical2.R[m
+	[31mmodified:   vignettes/practical2_content.Rmd[m
+	[31mmodified:   vignettes/solutions2.R[m
+	[31mmodified:   vignettes/solutions2.Rmd[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mvignettes/practical1.pdf[m
+	[31mvignettes/practical2.pdf[m
+	[31mvignettes/solutions2.pdf[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/theo/GitHub/jr-packages/jrAdvPackage]0;theo@theo-Inspiron-5570: ~/GitHub/jr-packages/jrAdvPackage[01;32mtheo@theo-Inspiron-5570[00m:[01;34m~/GitHub/jr-packages/jrAdvvPackage[00m$ git add . 

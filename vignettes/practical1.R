@@ -65,12 +65,12 @@ Fun2()
 
 ## -----------------------------------------------
 Fun2 = function(x = 10) {
-  return(x*x)
+  return(x * x)
 }
 
 ## ----echo=TRUE----------------------------------
 Fun4 = function(x) {
-  if(x==5) {
+  if (x == 5) {
     y = 0
   } else {
     y = 1
@@ -81,8 +81,8 @@ Fun4 = function(x) {
 ## -----------------------------------------------
 Fun4 = function(x) {
   rtn_value = 0
-  if(x > 0) {
-    rtn_value = 1 
+  if (x > 0) {
+    rtn_value = 1
   } else if (x < 0) {
     rtn_value = -1
   }
@@ -92,7 +92,7 @@ Fun4 = function(x) {
 ## -----------------------------------------------
 Fun4 = function(x) {
   rtn_value = 0
-  if(x > 0) {
+  if (x > 0) {
     stop("This function requires x <= 0")
   } else if (x < 0) {
     rtn_value = -1
@@ -102,7 +102,7 @@ Fun4 = function(x) {
 
 ## ----results="hide", echo=TRUE------------------
 total = 0
-for(i in 1:5) {
+for (i in 1:5) {
   total = total + i
 }
 total
@@ -112,14 +112,14 @@ total
 
 ## -----------------------------------------------
 total = 0
-for(i in 1:20) {
+for (i in 1:20) {
   total = total + (i + 1)
 }
 total
 
 ## -----------------------------------------------
 total = 0
-for(j in -10:15) {
+for (j in-10:15) {
   total = total + j
 }
 total
@@ -131,14 +131,14 @@ sum(-10:15)
 ## ----echo=TRUE----------------------------------
 a = 2
 total = 0
-for(blob in a:5) {
+for (blob in a:5) {
   total = total + blob
 }
 
 ## -----------------------------------------------
 Fun5 = function(a) {
   total = 0
-  for(blob in a:5){
+  for (blob in a:5) {
     total = total + blob
   }
   return(total)
@@ -148,7 +148,7 @@ Fun5(1)
 ## -----------------------------------------------
 Fun5 = function(a, b) {
   total = 0
-  for(blob in a:b){
+  for (blob in a:b) {
     total = total + blob
   }
   return(total)
@@ -156,46 +156,28 @@ Fun5 = function(a, b) {
 Fun5(1, 5)
 
 ## -----------------------------------------------
-Fun5 = function(a=1, b=10) {
+Fun5 = function(a = 1, b = 10) {
   total = 0
-  for(blob in a:b) {
+  for (blob in a:b) {
     total = total + blob
   }
   return(total)
 }
 Fun5(5)
 
-## -----------------------------------------------
-Fun5 = function(a=1, b=10) {
+## ---- message = FALSE---------------------------
+Fun5 = function(a = 1, b = 10) {
   total = 0
-  for(blob in a:b) {
+  for (blob in a:b) {
     total = total + blob
     message("Current total is ", total)
-    if(total > 50){
+    if (total > 50) {
       stop("Total has surpassed limit of 50")
     }
   }
   return(total)
 }
 Fun5(5)
-
-## ----echo = TRUE, error = TRUE------------------
-dd = data.frame(w = rnorm(10), x = letters[1:10], y = rnorm(10), z = rnorm(10))
-
-max_cols = rep(NA, ncol(dd))
-for(i in seq_along(dd)) {
-  max_cols[i] = max(dd[, i])
-}
-max_cols
-
-## ---- eval = FALSE------------------------------
-#  dd = data.frame(w = rnorm(10), x = letters[1:10], y = rnorm(10), z = rnorm(10))
-#  
-#  max_cols = rep(NA, ncol(dd))
-#  for(i in seq_along(dd)) {
-#    try(max_cols[i] <- max(dd[, i]))
-#  }
-#  max_cols
 
 ## ----eval=FALSE, echo = TRUE--------------------
 #  library("jrAdvPackage")

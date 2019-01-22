@@ -209,6 +209,40 @@ geometric = function(prob) {
 }
 ```
 
+## Multiple column types
+
+In the below code, I've attempted to loop through a data frame and extract the maximum values.
+
+```{r echo = TRUE, error = TRUE, eval = FALSE}
+dd = data.frame(w = rnorm(10), 
+                x = letters[1:10],
+                y = rnorm(10),
+                z = rnorm(10)
+)
+
+max_cols = rep(NA, ncol(dd))
+for (i in seq_along(dd)) {
+  max_cols[i] = max(dd[, i])
+}
+max_cols
+```
+
+\noindent However, there's something wrong. The second column isn't numeric and so the for loop breaks when we get to there. Of course, we could just change the iterations to c(1,3,4) to leave out the second column. But imagine we have tens of columns. Use the `try()` function to bypass the error. 
+
+```{r, eval = FALSE, error = FALSE}
+dd = data.frame(w = rnorm(10), 
+                x = letters[1:10],
+                y = rnorm(10),
+                z = rnorm(10)
+)
+
+max_cols = rep(NA, ncol(dd))
+for (i in seq_along(dd)) {
+  try(max_cols[i] <- max(dd[, i]))
+}
+max_cols
+```
+
 ## Solutions
 
 Solutions are contained within the course package
