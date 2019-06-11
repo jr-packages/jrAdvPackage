@@ -1,7 +1,7 @@
 Package: jrAdvPackage
 Type: Package
 Title: Course Material for Advanced R / Building an R Package Combo
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Colin", "Gillespie", email="colin@jumpingrivers.com", role =
     c("aut", "cre"))
 Author: Colin Gillespie
@@ -22,6 +22,9 @@ Imports:
     jrData, 
     pryr, 
     tufte
+Suggests:
+    testthat,
+    lintr
 Remotes: jr-packages/jrData
 VignetteBuilder: knitr
 RoxygenNote: 6.1.0
