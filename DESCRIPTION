@@ -25,7 +25,8 @@ Imports:
     poweRlaw,
     pryr,
     roxygen2,
-    tufte
+    tufte,
+    formatr
 Suggests:
     lintr,
     testthat
