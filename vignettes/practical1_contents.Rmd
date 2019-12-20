@@ -4,19 +4,19 @@ library(knitr)
 # opts_knit$set(out.format = "latex")
 knit_theme$set(knit_theme$get("greyscale0"))
 
-options(replace.assign=FALSE,width=50)
+options(replace.assign = FALSE, width = 50)
 
-opts_chunk$set(fig.path='figure/graphics-', 
-               cache.path='cache/graphics-', 
-               fig.align='center', 
-               dev='pdf', fig.width=5, fig.height=5, 
-               fig.show='hold', cache=FALSE, par=TRUE)
-knit_hooks$set(crop=hook_pdfcrop)
+opts_chunk$set(fig.path = "figure/graphics-", 
+               cache.path = "cache/graphics-", 
+               fig.align = "center", 
+               dev = "pdf", fig.width = 5, fig.height = 5, 
+               fig.show = "hold", cache = FALSE, par = TRUE)
+knit_hooks$set(crop = hook_pdfcrop)
 
-knit_hooks$set(par=function(before, options, envir){
-  if (before && options$fig.show!='none') {
+knit_hooks$set(par = function(before, options, envir) {
+  if (before && options$fig.show != "none") {
     #par(mar=c(3,3,2,1),cex.lab=.95,cex.axis=.9, mgp=c(2,.7,0),tcl=-.01, las=1)
-  }}, crop=hook_pdfcrop)
+  }}, crop = hook_pdfcrop)
 ```
 
 The aim of this practical is to review our knowledge of functions, for loops and if statements. 

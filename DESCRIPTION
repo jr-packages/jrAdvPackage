@@ -1,31 +1,37 @@
-Package: jrAdvPackage
 Type: Package
-Title: Course Material for Advanced R / Building an R Package Combo
+Package: jrAdvPackage
+Title: Course Material for Advanced R / Building an R Package
+    Combo
 Version: 0.1.1
-Authors@R: person("Colin", "Gillespie", email="colin@jumpingrivers.com", role =
-    c("aut", "cre"))
+Authors@R: 
+    person(given = "Colin",
+           family = "Gillespie",
+           role = c("aut", "cre"),
+           email = "colin@jumpingrivers.com")
 Author: Colin Gillespie
 Maintainer: Colin Gillespie <colin@jumpingrivers.com>
-Description: This is a one day intensive course on Advanced R techniques 
-    and building an R package.
-    This course will be a mixture of lectures and computer practicals.
-URL: http://www.jumpingrivers.com
+Description: This is a one day intensive course on Advanced R
+    techniques and building an R package.  This course will be a mixture
+    of lectures and computer practicals.
 License: GPL-3 | GPL-2
+URL: http://www.jumpingrivers.com
 Depends:
     R (>= 3.0)
 Imports:
     devtools,
-    knitr, 
-    roxygen2, 
-    drat, 
-    poweRlaw, 
-    jrData, 
-    pryr, 
+    drat,
+    jrData,
+    knitr,
+    poweRlaw,
+    pryr,
+    roxygen2,
     tufte
 Suggests:
-    testthat,
-    lintr
-Remotes: jr-packages/jrData
-VignetteBuilder: knitr
-RoxygenNote: 6.1.0
+    lintr,
+    testthat
+VignetteBuilder: 
+    knitr
+Remotes: 
+    jr-packages/jrData
 Encoding: UTF-8
+RoxygenNote: 7.0.2

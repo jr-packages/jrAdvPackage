@@ -19,20 +19,20 @@ library(tufte)
 
 ```{r,setup, include=FALSE, cache=FALSE}
 library(knitr)
-options(replace.assign=FALSE,width=50)
+options(replace.assign = FALSE, width = 50)
 
-opts_chunk$set(fig.path='knitr_figure/graphics-',
-               cache.path='knitr_cache/graphics-',
-               fig.align='center',
-               dev='pdf', fig.width=5, fig.height=5,
-               fig.show='hold', cache=FALSE, par=TRUE)
-knit_hooks$set(crop=hook_pdfcrop)
+opts_chunk$set(fig.path = "knitr_figure/graphics-",
+               cache.path = "knitr_cache/graphics-",
+               fig.align = "center",
+               dev = "pdf", fig.width = 5, fig.height = 5,
+               fig.show = "hold", cache = FALSE, par = TRUE)
+knit_hooks$set(crop = hook_pdfcrop)
 
 knit_hooks$set(par = function(before, options, envir) {
-    if (before && options$fig.show!='none') {
-        par(mar=c(3,3,2,1),cex.lab=.95,cex.axis=.9,
-            mgp=c(2,.7,0),tcl=-.01, las=1)
-}}, crop=hook_pdfcrop)
+    if (before && options$fig.show != "none") {
+        par(mar = c(3, 3, 2, 1), cex.lab = .95, cex.axis = .9,
+            mgp = c(2, .7, 0), tcl = -.01, las = 1)
+}}, crop = hook_pdfcrop)
 ```
 
 
@@ -190,7 +190,7 @@ run
 3. Now use `check_numeric` in the `add` function
     ```{r,}
     add = function(x, y) {
-      if(!check_numeric(c(x, y))) stop("Not numeric")
+      if (!check_numeric(c(x, y))) stop("Not numeric")
       x + y
     }
     ```
@@ -269,7 +269,7 @@ directly edit the `Rd` files.
     #' ## Can also use negative numbers
     #' add(-5, 10)
     add = function(x, y) {
-      if(!check_numeric(c(x, y))) stop("Not numeric")
+      if (!check_numeric(c(x, y))) stop("Not numeric")
       x + y
     }
     ```
@@ -420,7 +420,7 @@ NULL
 \noindent Now save^[Use the `save` function.] the data frame `example_data`
 in the `data/` directory
     ```{r,eval=FALSE}
-    save(example_data, file="data/example_data.RData")
+    save(example_data, file = "data/example_data.RData")
     ```
 3. Create a file called `data_help_files.R` in the `R/` directory and
   document your new data set.
@@ -459,12 +459,12 @@ documentation, then you should consider creating a vignette:
 \noindent We can view vignettes from other packages using the `vignette` function
 
 ```{r,eval=FALSE}
-vignette(package="knitr")
+vignette(package = "knitr")
 ```
 \noindent or to view in your web browser
 
 ```{r,eval=FALSE}
-browseVignettes(package="knitr")
+browseVignettes(package = "knitr")
 ```
 ## Example: markdown vignettes
 
@@ -475,17 +475,19 @@ vignette, we simply place the file in the `vignettes/` directory.
 of file size) than the standard `html_document`] For
 example, suppose we have a file `intro.Rmd` that contains the following text:
 ^[The `UTF-8` line specifies the file encoding.]
-```{r,eval=FALSE}
+```{r, eval=FALSE, echo=-c(5,7)}
 ---
 title: "My very first vignette"
 author: "Colin Gillespie and Robin Lovelace"
 output: rmarkdown::html_vignette
-vignette: >
+# nolint start
+vignette: <
+# nolint end
   %\VignetteIndexEntry{My very first vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+```
 ## My first package
 
 This is my **first** package vignette.
